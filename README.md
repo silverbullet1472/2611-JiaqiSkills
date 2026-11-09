@@ -39,6 +39,6 @@
 
 ## 个人全局工作约定
 
-[AGENTS.md](AGENTS.md)是个人全局工作偏好的原样备份，涵盖中文表达、任务范围、代码复杂度、验证投入和子代理协作方式。
+[global-config/AGENTS.md](global-config/AGENTS.md)是个人全局工作偏好的原样备份，涵盖中文表达、任务范围、代码复杂度、验证投入和子代理协作方式。该文件单独存放于`global-config/`，用于参考和复制，不是本仓库的项目级规则。
 
 如需用作个人全局配置，可放到`~/.codex/AGENTS.md`（Windows对应`%USERPROFILE%\.codex\AGENTS.md`，设置了`CODEX_HOME`时使用该目录）。已有配置时先比较、按需合并，避免直接覆盖自己的习惯。文中的模型、子代理类型与工作流程取决于使用环境，不保证适用于每个人。
