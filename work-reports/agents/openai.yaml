@@ -1,0 +1,4 @@
+interface:
+  display_name: "周月报"
+  short_description: "根据当前项目及子项目记录生成周报，或根据提供的周报汇总月报"
+  default_prompt: "请使用 $work-reports，根据当前项目及全部子项目的工作记录生成上周周报。"

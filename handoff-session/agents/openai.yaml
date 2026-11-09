@@ -1,0 +1,4 @@
+interface:
+  display_name: "会话交接"
+  short_description: "更新所属范围的状态，按需就近保存交接材料，并生成新会话提示词"
+  default_prompt: "使用 $handoff-session 整理当前会话，完成必要的信息落盘，并给出可直接复制到新会话的提示词。"

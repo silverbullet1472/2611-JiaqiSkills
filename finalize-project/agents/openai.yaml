@@ -1,0 +1,4 @@
+interface:
+  display_name: "项目收尾"
+  short_description: "按项目或子项目范围验收成果、更新状态并归档，在 Git 仓库中完成提交"
+  default_prompt: "使用 $finalize-project 对当前工作范围执行收尾，整理验证成果、更新状态并按需归档，在 Git 仓库中提交并报告剩余改动。"

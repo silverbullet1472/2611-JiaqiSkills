@@ -1,0 +1,4 @@
+interface:
+  display_name: "网信中心PPT"
+  short_description: "统一文案与版式，生成带两级章节导航和网信中心视觉风格的离线HTML汇报"
+  default_prompt: "使用 $wangxin-presentation，根据提供的材料制作网信中心风格的HTML汇报。"

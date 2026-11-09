@@ -1,0 +1,4 @@
+interface:
+  display_name: "活人感 PPT"
+  short_description: "优化 PPT 与滚动式 HTML 汇报的文案和信息呈现"
+  default_prompt: "使用 $human-presentation 优化这份视觉汇报的文案、信息层级和呈现关系。"

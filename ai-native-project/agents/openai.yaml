@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI 原生项目建设"
+  short_description: "初始化或维护 AI 主导项目的目录、状态、协作约定和 Git 基础"
+  default_prompt: "使用 $ai-native-project 根据当前材料建立或维护 AI 原生项目基础，沿用合理结构并补齐状态、交接、归档与 Git 约定。"
