@@ -1,0 +1,36 @@
+{
+  "title": "面向河湖遥感图斑复核的AI辅助研判技术研究",
+  "title_lines": [
+    "面向河湖遥感图斑复核的",
+    "AI辅助研判技术研究"
+  ],
+  "unit": "长江水利委员会网络与信息中心",
+  "date": "2026年1月",
+  "content_css_file": "example.css",
+  "pages": [
+    {
+      "title": "研究目标",
+      "chapter": "目标与内容",
+      "topic": "研究目标",
+      "html": "<div class=\"example-goal\"><div><p class=\"lead\">面向河湖遥感图斑复核业务，研究可解释、可追溯的多模态材料智能研判方法。</p><div class=\"callout\"><h3>复核依据与证据对应</h3><p>围绕知识底座、材料理解、闭环校验和结论生成开展研究，提升复核效率与质量。</p></div></div><figure><button class=\"image-button\" aria-label=\"放大建筑照片\"><img src=\"building-landscape.jpg\" alt=\"原PPT中的建筑照片\"></button></figure></div>"
+    },
+    {
+      "title": "知识库与数据集构建",
+      "chapter": "技术路线",
+      "topic": "知识与数据",
+      "html": "<div class=\"example-columns\"><article><h3>专业知识库</h3><p>汇集河湖管理相关政策文件、技术标准和流程指引，为研判提供依据。</p><div class=\"example-tags\"><span>政策文件</span><span>技术标准</span><span>流程指引</span></div></article><article><h3>训练与评测数据集</h3><p>收集、清理、标注河湖遥感图斑核查相关审批数据，形成高质量数据集。</p><div class=\"example-tags\"><span>数据收集</span><span>清理标注</span><span>训练评测</span></div></article></div><p class=\"example-note\">知识与数据共同支撑多模态材料理解、材料核验和依据检索。</p>"
+    },
+    {
+      "title": "原型开发与验证迭代",
+      "chapter": "技术路线",
+      "topic": "验证迭代",
+      "html": "<p class=\"lead\">开展原型系统开发，完成基础功能；围绕模型准确度、输出质量与系统功能开展综合评测。</p><div class=\"example-flow\"><div><span>01</span><h3>原型系统开发</h3><p>完成基础功能</p></div><i aria-hidden=\"true\">→</i><div><span>02</span><h3>综合评测</h3><p>检查准确度、质量与功能</p></div><i aria-hidden=\"true\">→</i><div><span>03</span><h3>迭代优化</h3><p>改进模型与系统</p></div></div><div class=\"callout\"><h3>验证与研发相衔接</h3><p>围绕模型和系统开展迭代，逐步完成研究阶段的功能与质量验证。</p></div>"
+    },
+    {
+      "title": "实施计划",
+      "chapter": "实施计划",
+      "topic": "阶段安排",
+      "html": "<table class=\"example-table\"><thead><tr><th>计划阶段</th><th>时间</th><th>主要工作</th></tr></thead><tbody><tr><td>启动与知识／数据建设</td><td>2026.01—2026.09</td><td>团队组建、任务分解，建设知识库与数据集</td></tr><tr><td>技术开发与模型训练</td><td>2026.10—2028.02</td><td>材料解析、材料核验、RAG与建议生成，综合评测</td></tr><tr><td>系统集成与应用验证</td><td>2028.03—2028.08</td><td>原型系统开发，系统评测与优化</td></tr><tr><td>成果整理产出</td><td>2028.09—2028.12</td><td>项目总结与相关成果发表</td></tr></tbody></table>"
+    }
+  ]
+}

@@ -28,6 +28,27 @@ document.querySelectorAll('dialog .close').forEach(b=>b.onclick=()=>b.closest('d
 document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target!==d)return;const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close();}));
 document.querySelector('#fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch{document.querySelector('#fullscreen').textContent='请按F11';}};
 document.querySelector('#print').onclick=async()=>{await document.fonts.ready;window.print();};
+// 光圈使用视口坐标，不受幻灯片缩放影响；移入弹窗以显示在顶层。
+const pointerHalo=document.createElement('div'),pointerToggle=document.querySelector('#pointer');
+pointerHalo.className='pointer-halo';pointerHalo.setAttribute('aria-hidden','true');document.body.append(pointerHalo);
+let pointerEnabled=true,pointerTimer;
+function hidePointer(){clearTimeout(pointerTimer);pointerHalo.classList.remove('visible');}
+pointerToggle.onclick=()=>{
+  pointerEnabled=!pointerEnabled;pointerToggle.setAttribute('aria-pressed',String(pointerEnabled));
+  pointerToggle.textContent=`鼠标高亮：${pointerEnabled?'开':'关'}`;hidePointer();
+};
+document.addEventListener('pointermove',e=>{
+  if(!pointerEnabled||e.pointerType!=='mouse'||!e.target.closest('#viewport,dialog[open]')){hidePointer();return;}
+  const host=document.querySelector('dialog[open]')||document.body;
+  if(pointerHalo.parentElement!==host)host.append(pointerHalo);
+  pointerHalo.style.left=`${e.clientX}px`;pointerHalo.style.top=`${e.clientY}px`;
+  pointerHalo.classList.add('visible');clearTimeout(pointerTimer);pointerTimer=setTimeout(hidePointer,2400);
+},{passive:true});
+document.documentElement.addEventListener('pointerleave',hidePointer);
+document.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')hidePointer();},{passive:true});
+document.querySelectorAll('dialog').forEach(d=>d.addEventListener('toggle',hidePointer));
+window.addEventListener('blur',hidePointer);
+document.addEventListener('visibilitychange',()=>{if(document.hidden)hidePointer();});
 document.addEventListener('keydown',e=>{
   if(document.querySelector('dialog[open]')||e.target.closest('input,textarea,select,[contenteditable="true"]'))return;
   if(e.key===' '&&e.target.closest('button,a'))return;
@@ -37,6 +58,7 @@ document.addEventListener('keydown',e=>{
   else if(e.key==='End'){e.preventDefault();show(slides.length-1);}
   else if(e.key.toLowerCase()==='f')document.querySelector('#fullscreen').click();
   else if(e.key.toLowerCase()==='o')document.querySelector('#overview').click();
+  else if(e.key.toLowerCase()==='h'&&!e.ctrlKey&&!e.metaKey&&!e.altKey){e.preventDefault();pointerToggle.click();}
 });
 const viewport=document.querySelector('#viewport');let lastWheel=0,total=0,locked=false,lastFlip=0;
 viewport.addEventListener('wheel',e=>{
